@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 mt-4">
+            <h2 class="text-primary mb-4 mt-4">Update User Information</h2>
+            <form [formGroup]="editUser" (ngSubmit)="updateUser()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName"  placeholder="Enter firstname">
+                           </div>
+                          <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastName" placeholder="Enter lastname">
+                          </div>
+                          <div class="form-group">
+                              <label>Email</label>
+                              <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="radio-inline">
+                              <input class="mr-3" type="radio" value="user" formControlName="role">User
+                            </label>
+                            <label class="radio-inline ml-3">
+                              <input class="mr-3" type="radio" value="admin" formControlName="role">Admin
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <div *ngIf="!loggedIn()" class="text-center">
+      <h1>Store your data here</h1>
+      <p class="lead">
+        Come on in to view our features... All you need to do is sign up!
+      </p>
+      <div class="text-center">
+        <button class="btn btn-lg mr-2 text-white" routerLink="auth/registration" style="background-color: #E95420;">Register</button>
+        <button class="btn btn-lg text-white" style="background-color: #138496;">Learn more</button>
+      </div>
+    </div>
+    <div *ngIf="loggedIn()" class="text-center">
+      <h2 class="text-info">Welcome to our site</h2>
+    </div>
+  </div>
+  

@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2 class="text-center text-primary mt-3">Sign Up </h2>
+        <hr class="mb-5">
+      
+        <div class="form-group">
+          <input type="text" class="form-control"
+            [ngClass]="{'is-invalid': registerForm.get('firstName').errors && registerForm.get('firstName').touched}"
+            formControlName="firstName" placeholder="Enter your first name">
+            <div class="invalid-feedback"
+            *ngIf="registerForm.get('firstName').hasError('required') && registerForm.get('firstName').touched">
+              Please enter your firstname!
+            </div>
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('firstName').hasError('cannotContainSpace') && registerForm.get('firstName').touched">
+                Cannot contain space first!
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <input type="text" class="form-control"
+              [ngClass]="{'is-invalid': registerForm.get('lastName').errors && registerForm.get('lastName').touched}"
+              formControlName="lastName" placeholder="Enter your last name">
+              <div class="invalid-feedback"
+            *ngIf="registerForm.get('lastName').hasError('required') && registerForm.get('lastName').touched">
+              Please enter your lastname!
+            </div>
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('lastName').hasError('cannotContainSpace') && registerForm.get('lastName').touched">
+                Cannot contain space first!
+            </div>
+        </div>
+      
+        <div class="form-group">
+            <input type="email" class="form-control"
+              [ngClass]="{'is-invalid': registerForm.get('email').errors && registerForm.get('email').touched}"
+              formControlName="email" placeholder="Enter your email" uniqueEmail>
+            <div class="invalid-feedback"
+                *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">
+                Please enter your email address!
+            </div>
+            <div class="invalid-feedback"
+              *ngIf="registerForm.get('email').errors?.email">
+                Email address is not valid!
+            </div>
+            <div class="invalid-feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+              <div
+                  *ngIf="email.errors['uniqueEmail'] || email.hasError()">
+                  Email already use!
+              </div>
+            </div>
+        </div>
+      
+        <div class="form-group">
+          <input type="password" class="form-control"
+            [ngClass]="{'is-invalid': registerForm.get('password').errors && registerForm.get('password').touched}"
+            formControlName="password" placeholder="Enter your password">
+            <div class="invalid-feedback"
+              *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">
+              Password is required!
+            </div>
+            <div class="invalid-feedback"
+              *ngIf="registerForm.get('password').hasError('minlength') && registerForm.get('password').touched">
+              Password must be atleast 4 characters!
+            </div>
+            <div class="invalid-feedback"
+              *ngIf="registerForm.get('password').hasError('maxlength') && registerForm.get('password').touched">
+              Password cannot exceed 15 characters!
+            </div>
+        </div>
+      
+        <div class="form-group">
+          <input type="password" class="form-control"
+            [ngClass]="{'is-invalid': registerForm.get('confirmPassword').errors &&
+             registerForm.get('confirmPassword').touched 
+            || registerForm.get('confirmPassword').touched 
+            && registerForm.hasError('mismatch')}"
+            formControlName="confirmPassword" placeholder="Enter confirm password">
+            <div class="invalid-feedback"
+              *ngIf="registerForm.get('confirmPassword').hasError('required') && 
+              registerForm.get('confirmPassword').touched">
+              Confirm Password is required!
+            </div>
+            <div class="invalid-feedback"
+              *ngIf="registerForm.hasError('mismatch') && 
+              registerForm.get('confirmPassword').touched">
+              Confirm Password must match!
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" style="margin-right:10px">I am a: </label>
+          <label class="radio-inline">
+            <input class="mr-3" type="radio" value="user" formControlName="role">User
+          </label>
+          <label class="radio-inline ml-3">
+            <input class="mr-3" type="radio" value="admin" formControlName="role">Admin
+          </label>
+        </div>
+      
+        <div class="form-group">
+          <button class="btn btn-success" [disabled]="!registerForm.valid" type="submit">Register</button>
+          <button class="btn btn-default" type="button" routerLink="">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  
+  
+  

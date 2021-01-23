@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.dataTables_wrapper .dataTables_paginate .first,
+.dataTables_wrapper .dataTables_paginate .last 
+{
+    display:none;
+}
+
+.dataTables_wrapper .dataTables_paginate .dataTables_info 
+{
+    display:none;
+}
+
+.profile-icon{
+    cursor: pointer;
+}
