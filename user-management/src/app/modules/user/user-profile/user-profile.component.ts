@@ -16,6 +16,7 @@ export class UserProfileComponent implements OnInit {
   @ViewChild('memberTabs', { static: true }) memberTabs: TabsetComponent;
   @ViewChild('editForm', {static: true}) editForm: NgForm;
   user: User;
+  dateOfBirth: Date;
   
   constructor(private route: ActivatedRoute,
               private userService: UserService,
@@ -24,6 +25,7 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
       this.user = data.user;
+      this.dateOfBirth = new Date(this.user.dateOfBirth);
     });
 
     this.route.queryParams.subscribe(params => {
@@ -36,7 +38,6 @@ export class UserProfileComponent implements OnInit {
     this.userService.updateUser(this.user)
       .subscribe((next) => {
         this.alertify.success('Profile updated successfully');
-        this.editForm.reset(this.user);
       }, error => {
         this.alertify.error(error);
       });
