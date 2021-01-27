@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { UserService } from 'src/app/_services/user.service';
+import { UserService } from '../../../_services/user.service';
 import { NameValidator } from '../../../_utility/validators/name.validator';
 import { User } from '../../../_models/user';
 import { uniqueEmailValidator } from '../../../_utility/directives/unique-email-validator.directive';
-import { Role } from 'src/app/_models/role';
-import { AuthService } from 'src/app/_services/auth.service';
-import { AlertifyService } from 'src/app/_services/alertify.service';
+import { Role } from '../../../_models/role';
+import { AuthService } from '../../../_services/auth.service';
+import { AlertifyService } from '../../../_services/alertify.service';
 
 @Component({
   selector: 'app-registration',

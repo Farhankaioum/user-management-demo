@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
-import { Gender } from 'src/app/_models/gender';
-import { User } from 'src/app/_models/user';
-import { AlertifyService } from 'src/app/_services/alertify.service';
-import { UserService } from 'src/app/_services/user.service';
+import { Gender } from '../../../_models/gender';
+import { User } from '../../../_models/user';
+import { AlertifyService } from '../../../_services/alertify.service';
+import { UserService } from '../../../_services/user.service';
 
 @Component({
   selector: 'app-user-profile',

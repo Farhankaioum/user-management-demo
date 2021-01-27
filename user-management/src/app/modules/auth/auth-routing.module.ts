@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserListResolver } from 'src/app/_resolver/user-list.resolver';
+import { UserListResolver } from '../../_resolver/user-list.resolver';
 
 import { LoginComponent} from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';

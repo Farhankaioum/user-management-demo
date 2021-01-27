@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Role } from 'src/app/_models/role';
-import { User } from 'src/app/_models/user';
+import { Role } from '../../../_models/role';
+import { User } from '../../../_models/user';
 
 import { UserService } from '../../../_services/user.service';
 

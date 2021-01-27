@@ -5,9 +5,9 @@ import { AdminAuthGuard } from '../../_guards/admin-auth.guard';
 
 import { UserListComponent } from './user-list/user-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserDetailsResolver } from 'src/app/_resolver/user-detail.resolver';
 import { UserEditComponent } from './user-list/user-edit/user-edit.component';
-import { UserEditResolver } from 'src/app/_resolver/user-edit-resolver';
+import { UserEditResolver } from '../../_resolver/user-edit-resolver';
+import { UserDetailsResolver } from '../../_resolver/user-detail.resolver';
 
 const routes: Routes = [
   {

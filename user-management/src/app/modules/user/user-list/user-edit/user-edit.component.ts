@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Role } from 'src/app/_models/role';
-import { User } from 'src/app/_models/user';
-import { AlertifyService } from 'src/app/_services/alertify.service';
-import { UserService } from 'src/app/_services/user.service';
+import { Role } from '../../../../_models/role';
+import { User } from '../../../../_models/user';
+import { AlertifyService } from '../../../../_services/alertify.service';
+import { UserService } from '../../../../_services/user.service';
 
 @Component({
   selector: 'app-user-edit',
