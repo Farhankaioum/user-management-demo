@@ -19,8 +19,11 @@ export class AppComponent implements OnInit{
       if(token === 'admin'){
         this.authService.currentUserName = 'Admin';
       }
+      else{
+        this.authService.currentUserName = 'User';
+      }
       
-      this.authService.currentUserName = 'User';
+     
     }
   }
 }

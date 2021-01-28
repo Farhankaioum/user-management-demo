@@ -78,7 +78,6 @@ export class UserListComponent implements OnInit {
        else{
         this.authService.currentUserName = 'User';
       }
-      console.log(this.authService.currentUserName);
     }
   }
 
