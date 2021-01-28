@@ -34,13 +34,23 @@
               <h4 class="mt-2">Gender</h4>
               <p class="ml-3">{{getGenderName(user.gender)}}</p>
               <h4>Date of Birth</h4>
-              <p class="ml-3">{{user.dateOfBirth}}</p>
+              <p class="ml-3">{{user.dateOfBirth | date:'yyyy-MM-dd'}}</p>
               <h4>Description</h4>
               <p class="ml-3">Hello I'm {{user.firstName + ' ' + user.lastName}}</p>
             </tab>
 
             <tab heading="Edit Profile">
               <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()" class="mt-4">
+
+                <div class="form-group">
+                  <label class="control-label" style="margin-right:10px">I am a: </label>
+                  <label class="radio-inline">
+                    <input class="mr-3" type="radio" value="male" name="gender" [(ngModel)]="user.gender" [checked]="maleSelected === true">Male
+                  </label>
+                  <label class="radio-inline ml-3">
+                    <input class="mr-3" type="radio" value="female" name="gender" [(ngModel)]="user.gender" [checked]="femaleSelected === true">Female
+                  </label>
+                </div>
 
                 <div class="form-group">
                   <label>First Name</label>
@@ -61,12 +71,18 @@
                 </div>
 
                 <div class="form-group">
+                  <label>Phone</label>
+                  <input type="text" name="phone" rows="6" class="form-control" 
+                  [(ngModel)]="user.phone">
+                </div>
+
+                <div class="form-group">
                   <label>Date of Birth</label>
-                  <input type="date" name="dob" class="form-control" [(ngModel)]="dateOfBirth">
+                  <input type="date" name="dateOfBirth" value="{{dateOfBirth}}" class="form-control" [(ngModel)]="dateOfBirth">
                 </div>
                 
                 <label class="mt-2">Location Details:</label>
-                <div class="form-inline mt-2">
+                <div class="form-inline mt-2 mb-3">
                   <label for="address" class="mr-2" >Address </label>
                   <input class="form-control mr-2" type="text" name="address" [(ngModel)]="user.address">
                   <label for="interested" class="mr-2">Interested </label>

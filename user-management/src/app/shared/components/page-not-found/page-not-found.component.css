@@ -1,0 +1,11 @@
+.page{
+    min-height: 250px;
+    padding: 50px;
+    margin-top: 150px;
+    background-color: #999999;
+    text-align: center;
+}
+
+.page h1{
+    font-size: 56px;
+}

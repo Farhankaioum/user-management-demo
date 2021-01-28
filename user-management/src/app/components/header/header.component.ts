@@ -11,10 +11,12 @@ export class HeaderComponent implements OnInit {
   model: any = {};
   name: string;
   
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.name = localStorage.getItem('token');
+    this.name = this.authService.currentUserName;
+    console.log();
   }
 
   isAdmin(): boolean{
@@ -27,7 +29,8 @@ export class HeaderComponent implements OnInit {
 
   logOut(){
     this.authService.logOut();
-    this.router.navigate(['/home']);
+    this.authService.currentUserName = null;
+    this.router.navigate(['']);
   }
 
 }

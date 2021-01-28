@@ -11,9 +11,9 @@ import { User } from '../../app/_models/user';
   export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         let  users: User[] =  [
-            { id:  1, firstName:  'km', lastName: 'miah', email: 'km@gmail.com', password: '123456', role: Role.User, dateOfBirth:'1/23/2021', gender: Gender.Male, interest: 'something', address: 'Dhaka', phone: '00000' },
-            { id:  2, firstName:  'test', lastName: 'test', email: 'test@gmail.com', password: '123456', role: Role.User, dateOfBirth:'1/23/2021', gender: Gender.Male, interest: 'something', address: 'Dhaka', phone: '00000' },
-            { id:  3, firstName:  'admin', lastName: 'admin', email: 'admin@gmail.com', password: '123456', role: Role.Admin, dateOfBirth:'1/23/2021', gender: Gender.Male, interest: 'something', address: 'Dhaka', phone: '00000' }
+            { id:  1, firstName:  'km', lastName: 'miah', email: 'km@gmail.com', password: '123456', role: Role.User, dateOfBirth:'2014-10-10', gender: Gender.Male, interest: 'something', address: 'Dhaka', phone: '00000' },
+            { id:  2, firstName:  'test', lastName: 'test', email: 'test@gmail.com', password: '123456', role: Role.User, dateOfBirth:'2014-10-10', gender: Gender.Male, interest: 'something', address: 'Dhaka', phone: '00000' },
+            { id:  3, firstName:  'admin', lastName: 'admin', email: 'admin@gmail.com', password: '123456', role: Role.Admin, dateOfBirth:'2014-10-10', gender: Gender.Male, interest: 'something', address: 'Dhaka', phone: '00000' }
             
            ];
         

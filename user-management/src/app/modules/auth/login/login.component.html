@@ -27,19 +27,12 @@
                         *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
                         Password is required!
                       </div>
-                      <div class="invalid-feedback"
-                        *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched">
-                        Password must be atleast 4 characters!
-                      </div>
-                      <div class="invalid-feedback"
-                        *ngIf="loginForm.get('password').hasError('maxlength') && loginForm.get('password').touched">
-                        Password cannot excedd 15 characters!
-                      </div>
                   </div>
 
                   <div class="form-group">
                     <button class="btn btn-info" [disabled]="!loginForm.valid" type="submit">Log In</button>
                   </div>
+                  <a class="nav-link" routerLink="/auth/registration">New? click here to registration!</a>
 
             </form>
         </div>

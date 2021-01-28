@@ -9,6 +9,8 @@ import { UserService } from './user.service';
 })
 export class AuthService {
   users: User[];
+  currentUserName: string;
+
   constructor(private userService: UserService) { }
 
   login(model: any){

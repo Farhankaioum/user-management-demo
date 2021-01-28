@@ -25,17 +25,12 @@ export class LoginComponent implements OnInit {
               private alertify: AlertifyService) { }
 
   ngOnInit(): void {
-    if(this.authService.loggedIn()){
-      this.router.navigate(['/']);
-    }
 
     this.route.data.subscribe(data => {
       this.users = data.users;
     });
 
     this.createLoginForm();
-
-    var result = this.authService.loggedIn();
   }
 
   createLoginForm(){
@@ -48,10 +43,14 @@ export class LoginComponent implements OnInit {
   login(){
     this.user = Object.assign({}, this.loginForm.value);
 
-    var existingUser = this.users.filter(u => u.email === this.user.email &&
+    var existingUser = null;
+    existingUser = this.users.filter(u => u.email === this.user.email &&
        u.password === this.user.password)[0];
-    if(existingUser !== null){
+
+    if(existingUser !== null && existingUser !== undefined){
       localStorage.setItem('userId', existingUser.id.toString());
+      this.authService.currentUserName = existingUser.role === Role.Admin ? 'Admin' : 'User';
+
       if(existingUser.role === Role.Admin){
         localStorage.setItem('token', 'admin');
         this.router.navigate(['/user/users']);
@@ -62,7 +61,7 @@ export class LoginComponent implements OnInit {
       }
     }
     else{
-      this.alertify.error('error occured when login!');
+      this.alertify.error('Username or password not match!');
     }
       
     

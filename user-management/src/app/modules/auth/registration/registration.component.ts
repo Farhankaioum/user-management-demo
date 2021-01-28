@@ -29,9 +29,6 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(this.authService.loggedIn()){
-      this.router.navigate(['/']);
-    }
     this.route.data.subscribe(data => {
       this.users = data.users;
     });

@@ -8,6 +8,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserEditComponent } from './user-list/user-edit/user-edit.component';
 import { UserEditResolver } from '../../_resolver/user-edit-resolver';
 import { UserDetailsResolver } from '../../_resolver/user-detail.resolver';
+import { PreventUnsavedChanges } from '../../_guards/prevent-unsaved.guard';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'profile', component: UserProfileComponent, resolve: {user: UserDetailsResolver}}
+      { path: 'profile', component: UserProfileComponent, resolve: {user: UserDetailsResolver},
+          canDeactivate: [PreventUnsavedChanges]}
     ]
   },
   {
@@ -31,7 +33,8 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AdminAuthGuard],
     children: [
-      { path: 'edit/:id', component: UserEditComponent, pathMatch: 'full', resolve: {user: UserEditResolver} }
+      { path: 'edit/:id', component: UserEditComponent, pathMatch: 'full',
+         resolve: {user: UserEditResolver}}
     ]
   }
   

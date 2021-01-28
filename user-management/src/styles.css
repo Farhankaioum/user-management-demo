@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+
 .dataTables_wrapper .dataTables_paginate .first,
 .dataTables_wrapper .dataTables_paginate .last 
 {
@@ -13,3 +15,13 @@
 .profile-icon{
     cursor: pointer;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-form-field-type-richeditor.mat-form-field-can-float .mat-form-field-label-wrapper, .mat-form-field-type-file.mat-form-field-can-float .mat-form-field-label-wrapper {
+    top: -22px;
+ }.mat-form-field-type-richeditor.mat-form-field-should-float .mat-form-field-label-wrapper, .mat-form-field-type-file.mat-form-field-should-float .mat-form-field-label-wrapper {
+    top: -8px;
+ }

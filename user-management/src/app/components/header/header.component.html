@@ -9,7 +9,7 @@
 
       <div *ngIf="loggedIn()" class="dropdown" ngbDropdown>
         <a class="dropdown-toggle text-light profile-icon text-capitalize" ngbDropdownToggle>
-          Welcome {{name}}
+          Welcome {{authService.currentUserName}}
         </a>
         <div class="mt-3" ngbDropdownMenu>
           <a *ngIf="isAdmin()" [routerLink]="['/user/users']" ngbDropdownItem>
